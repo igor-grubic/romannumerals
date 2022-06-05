@@ -1,0 +1,19 @@
+{
+  "name": "romannumerals",
+  "version": "1.0.0",
+  "description": "arabic numerals to roman numerals conversion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igor-grubic/romannumerals.git"
+  },
+  "author": "igor grubic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igor-grubic/romannumerals/issues"
+  },
+  "homepage": "https://github.com/igor-grubic/romannumerals#readme"
+}
