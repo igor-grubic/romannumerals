@@ -1,6 +1,6 @@
 # Roman numerals converter
 
-This is a service that converts integer numbers in roman numerals. It can convert numbers in a range of 1-3999.
+This is a service that converts integer numbers in roman numerals. It can convert numbers in a range of 1-3999999.
 It is based on the roman numerals table below:
 
 ```
@@ -16,7 +16,7 @@ Requirements can be found at [here](REQUIREMENTS.md)
 
 `curl http://localhost:8080/romannumerals?query={integer}`
 
-{integer} should be any number between 1-3999
+{integer} should be any number between 1-3999999
 
 alteratively open the url in a browser
 
