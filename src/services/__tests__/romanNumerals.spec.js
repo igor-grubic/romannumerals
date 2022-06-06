@@ -1,6 +1,12 @@
 import romanNumeralsService from '../romanNumerals';
 
 describe('arabic numerals to roman numerals conversion', () => {
+  it('should return error message is number <1 or >10', () => {
+    expect(romanNumeralsService.convertFromArabic(0).message).toBe(
+      romanNumeralsService.invalidInputMessage,
+    );
+  });
+
   it.each`
     arabic | roman
     ${1}   | ${'I'}

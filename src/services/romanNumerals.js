@@ -1,5 +1,9 @@
 import romanSymbols from '../data/romanSymbols.js';
 
+const MAX_NUMBER = 10;
+const MIN_NUMBER = 1;
+const invalidInputMessage = `Query should be any number between ${MIN_NUMBER}-${MAX_NUMBER}`;
+
 const repeatSymbol = (symbol, times) =>
   [...Array(times)].reduce((previousValue) => `${previousValue}${symbol}`, '');
 
@@ -40,10 +44,17 @@ const getRomanFromArabic = (arabicNumber) => {
   return result;
 };
 
+const isValidInput = (number) => {
+  if (!number || number > MAX_NUMBER || number < MIN_NUMBER) return false;
+  return true;
+};
+
 const convertFromArabic = (number) => {
+  if (!isValidInput(number)) return {message: invalidInputMessage};
   return getRomanFromArabic(number);
 };
 
 export default {
   convertFromArabic,
+  invalidInputMessage,
 };
