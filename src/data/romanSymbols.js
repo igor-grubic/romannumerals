@@ -8,10 +8,13 @@ const data = {
   1000: 'M',
 };
 
+const overlineSymbol = '\u0305';
+
 const getSymbolFromArabic = (arabicSymbol) => {
   return data[arabicSymbol] || '';
 };
 
 export default {
   getSymbolFromArabic,
+  overlineSymbol,
 };

@@ -1,15 +1,28 @@
 import romanSymbols from '../data/romanSymbols.js';
 import messaging from '../messaging';
 
-const MAX_NUMBER = 3999;
+const MAX_NUMBER = 3999999;
 const MIN_NUMBER = 1;
 const invalidInputMessage = `Query should be any number between ${MIN_NUMBER}-${MAX_NUMBER}`;
 
 const repeatSymbol = (symbol, times) =>
   [...Array(times)].reduce((previousValue) => `${previousValue}${symbol}`, '');
 
+const shouldAddOverline = (digit, multiplier) => {
+  return digit * multiplier > 3000;
+};
+
+const addOverline = (digits) => {
+  return [...digits].reduce(
+    (previousValue, digit) => `${previousValue}${digit}${romanSymbols.overlineSymbol}`,
+    '',
+  );
+};
 const getRomanFromArabic = (digit, position) => {
-  const multiplier = Math.pow(10, position);
+  let multiplier = Math.pow(10, position);
+  const withOverline = shouldAddOverline(digit, multiplier);
+  if (withOverline) multiplier = multiplier / 1000;
+
   const symbols = {
     symbolForOne: romanSymbols.getSymbolFromArabic(1 * multiplier),
     symbolForFive: romanSymbols.getSymbolFromArabic(5 * multiplier),
@@ -39,11 +52,8 @@ const getRomanFromArabic = (digit, position) => {
     case 9:
       result = `${symbols.symbolForOne}${symbols.symbolForTen}`;
       break;
-    case 10:
-      result = `${symbols.symbolForTen}`;
-      break;
   }
-  return result;
+  return withOverline ? addOverline(result) : result;
 };
 
 const isValidInput = (number) => {
@@ -70,4 +80,6 @@ const convertFromArabic = (number) => {
 export default {
   convertFromArabic,
   invalidInputMessage,
+  MAX_NUMBER,
+  MIN_NUMBER,
 };
