@@ -10,6 +10,8 @@ Value	1	5	10	50	100	500	1000
 
 from https://en.wikipedia.org/wiki/Roman_numerals
 
+Requirements can be found at [here](REQUIREMENTS.md)
+
 # Usage
 
 `curl http://localhost:8080/romannumerals?query={integer}`
@@ -70,3 +72,9 @@ server.js
 routes.js
 messaging.js
 ```
+
+# Next steps
+
+- add typescript
+- extend range of convertible numbers to 2,200,000,000
+- include dev-ops capabilities for metrics, monitoring, logging
