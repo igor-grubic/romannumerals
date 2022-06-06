@@ -1,5 +1,5 @@
 import romanSymbols from '../data/romanSymbols.js';
-import messaging from '../messaging';
+import messaging from '../messaging.js';
 
 const MAX_NUMBER = 3999999;
 const MIN_NUMBER = 1;

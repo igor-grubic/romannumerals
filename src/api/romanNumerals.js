@@ -1,5 +1,5 @@
 import romanNumeralsService from '../services/romanNumerals.js';
-import messaging from '../messaging';
+import messaging from '../messaging.js';
 
 /**
  * @desc getRomanNumerals
