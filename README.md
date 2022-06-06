@@ -16,6 +16,8 @@ Requirements can be found [here](REQUIREMENTS.md)
 
 # Usage
 
+Run the service with `npm run start` (see development) then
+
 `curl http://localhost:8080/romannumerals?query={integer}`
 
 {integer} should be any number between 1-3999999
@@ -39,8 +41,8 @@ alternatively open the url in a browser
 #### Getting started
 
 ```bash
-git clone https://github.com/igor-grubic/romans.git
-cd romans
+git clone https://github.com/igor-grubic/romannumerals.git
+cd romannumerals
 npm install
 ```
 
