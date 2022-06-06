@@ -1,6 +1,19 @@
 import romanNumeralsService from '../services/romanNumerals.js';
 import messaging from '../messaging';
 
+/**
+ * @desc getRomanNumerals
+ * Convert number to it's roman numeral rappresentation
+ *
+ * @param req {Object} The request.
+ * @param res {Object} The response.
+ * @param req.query.query {String} The number to convert.
+ * @param {Function} next
+ * @return {undefined}
+ *
+ * @example
+     http://localhost:8080/romannumerals?query=123
+ */
 const getRomanNumerals = async (req, res, next) => {
   try {
     const query = req.query.query;
