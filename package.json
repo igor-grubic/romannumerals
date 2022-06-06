@@ -4,6 +4,7 @@
   "description": "arabic numerals to roman numerals conversion",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest ./src",
     "watch": "jest --watch ./src",
     "lint": "eslint 'src/**'",
@@ -23,6 +24,7 @@
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "babel-jest": "^28.1.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -40,5 +42,8 @@
       "eslint",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "express": "^4.18.1"
   }
 }
