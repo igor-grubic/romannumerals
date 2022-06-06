@@ -1,6 +1,6 @@
 # Roman numerals converter
 
-This is a service that converts integer numbers in roman numerals. It can convert numbers in a range of 1-3999999.
+This service converts integer numbers in roman numerals. It can convert numbers from 1 to 3999999.
 It is based on the roman numerals table below:
 
 ```
@@ -8,9 +8,11 @@ Symbol	I	V	X	L	C	D	M
 Value	1	5	10	50	100	500	1000
 ```
 
+Using the [vinculum](https://en.wikipedia.org/wiki/roman_numerals#vinculum) notion for numbers > 3999.
+
 from https://en.wikipedia.org/wiki/Roman_numerals
 
-Requirements can be found at [here](REQUIREMENTS.md)
+Requirements can be found [here](REQUIREMENTS.md)
 
 # Usage
 
@@ -18,7 +20,7 @@ Requirements can be found at [here](REQUIREMENTS.md)
 
 {integer} should be any number between 1-3999999
 
-alteratively open the url in a browser
+alternatively open the url in a browser
 
 # Development
 
