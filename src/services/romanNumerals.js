@@ -1,4 +1,5 @@
 import romanSymbols from '../data/romanSymbols.js';
+import messaging from '../messaging';
 
 const MAX_NUMBER = 3999;
 const MIN_NUMBER = 1;
@@ -55,13 +56,15 @@ const numberToOrderedArrayOfDigits = (number) => {
 };
 
 const convertFromArabic = (number) => {
-  if (!isValidInput(number)) return {message: invalidInputMessage};
+  if (!isValidInput(number))
+    return messaging.createMessage(messaging.status.invalid_input, invalidInputMessage);
 
   const result = numberToOrderedArrayOfDigits(number).reduce(
     (previousValue, digit, position) => `${getRomanFromArabic(digit, position)}${previousValue}`,
     '',
   );
-  return result;
+
+  return messaging.createMessage(messaging.status.success, result);
 };
 
 export default {

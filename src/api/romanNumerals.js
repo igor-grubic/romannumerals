@@ -1,4 +1,5 @@
 import romanNumeralsService from '../services/romanNumerals.js';
+import messaging from '../messaging';
 
 const getRomanNumerals = async (req, res, next) => {
   try {
@@ -12,10 +13,13 @@ const getRomanNumerals = async (req, res, next) => {
       return res.status(400).send(romanNumeralsService.invalidInputMessage);
     }
 
-    const roman = romanNumeralsService.convertFromArabic(parseInt(query));
+    const serviceRes = romanNumeralsService.convertFromArabic(parseInt(query));
 
-    res.status(200).send({query: parseInt(query), roman});
-    next();
+    if (serviceRes.status === messaging.status.success) {
+      return res.status(200).send({query: parseInt(query), roman: serviceRes.message});
+    } else {
+      return res.status(messaging.statusCodes[serviceRes.status]).send(serviceRes.message);
+    }
   } catch (e) {
     next(e);
   }

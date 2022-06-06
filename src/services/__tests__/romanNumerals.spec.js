@@ -32,6 +32,6 @@ describe('arabic numerals to roman numerals conversion', () => {
     ${978}  | ${'CMLXXVIII'}
     ${3999} | ${'MMMCMXCIX'}
   `('should return $roman when input is $arabic', ({arabic, roman}) => {
-    expect(romanNumeralsService.convertFromArabic(arabic)).toBe(roman);
+    expect(romanNumeralsService.convertFromArabic(arabic).message).toBe(roman);
   });
 });
